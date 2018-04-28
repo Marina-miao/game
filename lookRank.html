@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>补水大作战</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<bgsound loop="infinite" src="audio/bg.mp3">
+<link type="text/css" href="css/lookRank.css" rel="stylesheet"/>
+<script src="js/jquery.js"></script>
+<script>
+	$(function(){
+		toggleBgAudio(true);
+		$(".gameBtnx").on("touchstart",function(){
+			$(".cover").show();
+		});
+		$(".knowImg").on("touchstart",function(){
+			$(".cover").hide();
+		});
+	});
+	//控制音乐函数
+	var toggleBgAudio=function(isPlay){
+		var audio=document.getElementById("audio");
+		if(isPlay){
+			audio.play();
+		}else{
+			audio.pause();
+		}
+	};
+</script>
+</head>
+<body>
+	<!--音乐-->
+    <audio id="audio" loop>
+        <source src="./audio/bg.mp3">
+        <source src="./audio/bg.ogg">
+    </audio>
+	<div class="secretBox">
+    	<p class="logoBox"><img src="./img/logo.png" class="logoImg"/></p>
+        <p class="texCenter"><img src="./img/begainText.png" class="topText"></p>
+        <p class="texCenter lastTime">您的朋友目前得分是：<span style="font-size:18px;font-weight:bold;">33</span>分</br>她剩余的集分时间：</p>
+        <p class="texCenter"><img src="./img/timeImg.png" class="timeImg"/></p>
+        <p class="texCenter"><img src="./img/priceImg.png" class="priceImg"/></p>
+        <p class="texCenter"><button class="gameBtn">帮她加分</button></p>
+        <p class="texCenter"><button class="gameBtnx">我也要参加</button></p>
+        <p class="texCenter"><button class="gameBtn">查询排名</button></p>
+    </div>
+    <div class="cover">
+    	<div class="coverText">
+        	<p class="topTipP"><img src="./img/topTip.png" class="topTip"/></p>
+            <p class="texCenter"><img src="./img/careImg1.png" class="careImg1"/></p>
+            <p class="texCenter"><img src="./img/careImg2.png" class="careImg2"/></p>
+            <p class="texCenter"><img src="./img/kownImg.png" class="knowImg"/></p>
+        </div>
+    </div>
+    <script>
+    	var audio=document.getElementById("audio");
+		audio.play();
+    </script>
+</body>
+
+</html>
